@@ -1,14 +1,18 @@
 # Customer Voice Carousel Prototype
 
-A responsive customer voice (testimonial) carousel designed for Japanese corporate websites.
+日本のコーポレートサイト向けに設計した、レスポンシブ対応の「お客様の声（Customer Voice）」カルーセルのプロトタイプです。
 
-Built with Next.js · Tailwind CSS v4 · TypeScript.
+Next.js · Tailwind CSS v4 · TypeScript で構築しています。
 
-## Use Case
+## デモ
 
-Typical 「お客様の声」 section used in:
+![デモ画面](./public/demo.png)
 
-- corporate websites
-- service landing pages
-- logistics company sites
-- SaaS product pages
+## 想定ユースケース
+
+次のようなサイトでよく見られる「お客様の声」セクションを想定しています。
+
+- コーポレートサイト
+- サービスのランディングページ
+- 物流会社のサイト
+- SaaS プロダクトページ
