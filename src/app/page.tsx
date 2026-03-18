@@ -18,7 +18,7 @@ const customerVoices: CustomerVoice[] = [
     image: "/customer-voice-global.avif",
     company: "グローバル・マネジメント様",
     title:
-      " お客様の声:3年ぶりに2度目のリニューアル。上場企業グローバル・マネジメント様サイトリニューアル事例紹介",
+      "お客様の声:3年ぶりに2度目のリニューアル。上場企業グローバル・マネジメント様サイトリニューアル事例紹介",
   },
   {
     href: "/",
@@ -75,7 +75,7 @@ export default function Home() {
       >
         <div
           className={cn(
-            "relative mr-0 mb-10 ml-auto max-w-5xl space-y-5 lg:-mb-10 lg:space-y-10",
+            "relative mr-0 mb-10 ml-auto max-w-5xl space-y-5 lg:-mb-10 lg:space-y-8",
           )}
         >
           <h1
@@ -90,14 +90,14 @@ export default function Home() {
           </h1>
           <p
             className={cn(
-              "text-2xl font-normal tracking-wider text-neutral-700 sm:text-3xl md:text-4xl",
+              "text-2xl font-normal tracking-wider text-neutral-700 sm:text-3xl md:text-4xl 2xl:text-5xl",
             )}
           >
             様々な業種の成功事例
           </p>
           <p
             className={cn(
-              "text-xs font-normal tracking-wide text-neutral-700 sm:text-sm md:text-base",
+              "text-xs font-normal tracking-wide text-neutral-700 sm:text-sm md:text-base 2xl:leading-8",
             )}
           >
             ここでは、私たちのアプローチがどのように
@@ -107,18 +107,18 @@ export default function Home() {
           <Link
             href="/"
             className={cn(
-              "group hidden w-fit min-w-50 rounded-lg border border-neutral-700 px-4 py-4 lg:flex lg:items-center lg:gap-x-0.5",
+              "group hidden w-50 rounded-2xl border border-neutral-700 px-4 py-4 lg:flex lg:items-center lg:gap-x-0.5 2xl:w-58 2xl:px-5 2xl:py-5",
             )}
           >
             <span
               className={cn(
-                "relative shrink-0 text-sm font-normal tracking-wider text-neutral-700",
+                "relative shrink-0 text-sm font-normal tracking-wider text-neutral-700 2xl:text-base",
               )}
             >
-              <span className="absolute -top-2.5 left-0 w-40 origin-top rotate-x-0 transition-transform duration-300 group-hover:rotate-x-90">
+              <span className="absolute -top-2.5 left-0 w-44 origin-top rotate-x-0 transition-transform duration-300 group-hover:rotate-x-90 2xl:-top-3">
                 お客様の声一覧を見る
               </span>
-              <span className="absolute -top-2.5 left-0 w-40 origin-bottom -rotate-x-90 transition-transform duration-300 group-hover:rotate-x-0 group-hover:delay-0">
+              <span className="absolute -top-2.5 left-0 w-44 origin-bottom -rotate-x-90 transition-transform duration-300 group-hover:rotate-x-0 group-hover:delay-0 2xl:-top-3">
                 お客様の声一覧を見る
               </span>
             </span>
