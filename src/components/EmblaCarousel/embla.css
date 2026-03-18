@@ -79,7 +79,7 @@
 }
 
 .embla__button--disabled {
-  opacity: 0.3;
+  opacity: 0.2;
   cursor: default;
   pointer-events: none;
 }
