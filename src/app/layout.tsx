@@ -10,15 +10,17 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
 });
 
-const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION ?? "";
+const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   title: "お客様の声カルーセル",
   description:
-    "日本の企業サイト向けに設計した、お客様の声カルーセルのプロトタイプ。Next.js・Tailwind CSS v4・TypeScriptで構築。",
-  verification: {
-    google: GOOGLE_SITE_VERIFICATION,
-  },
+    "日本のコーポレートサイト向けに設計した、レスポンシブ対応の「お客様の声（Customer Voice）」カルーセルのプロトタイプ。Next.js・Tailwind CSS v4・TypeScriptで構築。",
+  verification: GOOGLE_SITE_VERIFICATION
+    ? {
+        google: GOOGLE_SITE_VERIFICATION,
+      }
+    : undefined,
 };
 
 export default function RootLayout({
