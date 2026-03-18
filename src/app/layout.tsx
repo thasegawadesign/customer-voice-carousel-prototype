@@ -1,14 +1,7 @@
 import { cn } from "@/lib/utils";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-noto-sans-jp",
-});
 
 const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION;
 
@@ -32,7 +25,7 @@ export default function RootLayout({
   const isProduction = process.env.NODE_ENV === "production";
 
   return (
-    <html lang="ja" className={cn(notoSansJP.variable, "antialiased")}>
+    <html lang="ja" className={cn("font-sans antialiased")}>
       <body>
         {children}
         {isProduction && GA_ID && <GoogleAnalytics gaId={GA_ID} />}
