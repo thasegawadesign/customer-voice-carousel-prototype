@@ -4,6 +4,57 @@ import { EmblaOptionsType } from "embla-carousel";
 import Image from "next/image";
 import Link from "next/link";
 
+type CustomerVoice = {
+  href: string;
+  image: string;
+  company: string;
+  title: string;
+};
+
+const customerVoices: CustomerVoice[] = [
+  {
+    href: "/",
+    image: "/customer-voice-global.avif",
+    company: "グローバル・マネジメント様",
+    title:
+      " お客さまの声:3年ぶりに2度目のリニューアル。上場企業グローバル・マネジメント様サイトリニューアル事例紹介",
+  },
+  {
+    href: "/",
+    image: "/customer-voice-will.avif",
+    company: "ウィル・ワーク様",
+    title:
+      "お客さまの声:ブランディングとマーケティングを高次元で融合。人材サービスのウィル・ワークが実現したコーポレートサイトリニューアル事例紹介",
+  },
+  {
+    href: "/",
+    image: "/customer-voice-info.avif",
+    company: "インフォブレイン様",
+    title:
+      "お客さまの声:ブランディングとマーケティングを高次元で融合。インフォブレインが実現したコーポレートサイトリニューアル事例紹介",
+  },
+  {
+    href: "/",
+    image: "/customer-voice-green.avif",
+    company: "グリーンマネジメント様",
+    title:
+      "お客さまの声:事業成長に伴い強みを再整理し問い合わせの質が向上。グリーンマネジメント様サイトリニューアル事例紹介",
+  },
+  {
+    href: "/",
+    image: "/customer-voice-techbiz.avif",
+    company: "TechBiz様",
+    title: "お客さまの声:業界をリードするTechBiz様サイトリニューアル事例紹介",
+  },
+  {
+    href: "/",
+    image: "/customer-voice-stock.avif",
+    company: "iLight様",
+    title:
+      "お客さまの声:&quot;光と空気感&quot;を映し出す。iLightリブランディングプロジェクト事例紹介",
+  },
+];
+
 export default function Home() {
   const OPTIONS: EmblaOptionsType = {
     align: "center",
@@ -13,100 +64,29 @@ export default function Home() {
   };
   return (
     <>
-      <main className={cn("pt-60")}>
+      <main className={cn("px-5 pt-60 xl:pr-20 2xl:pr-48")}>
         <EmblaCarousel
-          slides={[
-            <Link key="1" href="/" className="flex flex-col gap-5">
-              <Image
-                src="/customer-voice-global.avif"
-                alt="1"
-                width={480}
-                height={270}
-                className={cn("rounded-lg")}
-              />
-              <p className={cn("text-[15px] font-normal text-neutral-400")}>
-                グローバル・マネジメント様
+          slides={customerVoices.map((voice, i) => (
+            <Link key={i} href="/" className="group flex flex-col gap-5">
+              <div className="overflow-hidden rounded-lg">
+                <Image
+                  src={voice.image}
+                  alt={voice.company}
+                  width={480}
+                  height={270}
+                  className="w-full transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              <p className="text-[15px] font-normal text-neutral-400">
+                {voice.company}
               </p>
-              <h2 className={cn("text-[20px] leading-7 font-medium")}>
-                お客さまの声:3年ぶりに2度目のリニューアル。上場企業グローバル・マネジメント様サイトリニューアル事例紹介
+
+              <h2 className="text-[20px] leading-7 font-medium group-hover:underline">
+                {voice.title}
               </h2>
-            </Link>,
-            <Link key="2" href="/" className={cn("flex flex-col gap-5")}>
-              <Image
-                src="/customer-voice-will.avif"
-                alt="2"
-                width={480}
-                height={270}
-                className={cn("rounded-lg")}
-              />
-              <p className={cn("text-[15px] font-normal text-neutral-400")}>
-                ウィル・ワーク様
-              </p>
-              <h2 className={cn("text-[20px] leading-7 font-medium")}>
-                お客さまの声:ブランディングとマーケティングを高次元で融合。人材サービスのウィル・ワークが実現したコーポレートサイトリニューアル事例紹介
-              </h2>
-            </Link>,
-            <Link key="3" href="/" className={cn("flex flex-col gap-5")}>
-              <Image
-                src="/customer-voice-info.avif"
-                alt="1"
-                width={480}
-                height={270}
-                className={cn("rounded-lg")}
-              />
-              <p className={cn("text-[15px] font-normal text-neutral-400")}>
-                インフォブレイン様
-              </p>
-              <h2 className={cn("text-[20px] leading-7 font-medium")}>
-                お客さまの声:ブランディングとマーケティングを高次元で融合。インフォブレインが実現したコーポレートサイトリニューアル事例紹介
-              </h2>
-            </Link>,
-            <Link key="4" href="/" className={cn("flex flex-col gap-5")}>
-              <Image
-                src="/customer-voice-green.avif"
-                alt="2"
-                width={480}
-                height={270}
-                className={cn("rounded-lg")}
-              />
-              <p className={cn("text-[15px] font-normal text-neutral-400")}>
-                グリーンマネジメント様
-              </p>
-              <h2 className={cn("text-[20px] leading-7 font-medium")}>
-                お客さまの声:事業成長に伴い強みを再整理し問い合わせの質が向上。グリーンマネジメント様サイトリニューアル事例紹介
-              </h2>
-            </Link>,
-            <Link key="5" href="/" className={cn("flex flex-col gap-5")}>
-              <Image
-                src="/customer-voice-techbiz.avif"
-                alt="1"
-                width={480}
-                height={270}
-                className={cn("rounded-lg")}
-              />
-              <p className={cn("text-[15px] font-normal text-neutral-400")}>
-                TechBiz様
-              </p>
-              <h2 className={cn("text-[20px] leading-7 font-medium")}>
-                お客さまの声:業界をリードするTechBiz様サイトリニューアル事例紹介
-              </h2>
-            </Link>,
-            <Link key="6" href="/" className={cn("flex flex-col gap-5")}>
-              <Image
-                src="/customer-voice-stock.avif"
-                alt="2"
-                width={480}
-                height={270}
-                className={cn("rounded-lg")}
-              />
-              <p className={cn("text-[15px] font-normal text-neutral-400")}>
-                iLight様
-              </p>
-              <h2 className={cn("text-[20px] leading-7 font-medium")}>
-                お客さまの声:&quot;光と空気感&quot;を映し出す。iLightリブランディングプロジェクト事例紹介
-              </h2>
-            </Link>,
-          ]}
+            </Link>
+          ))}
           options={OPTIONS}
         />
       </main>
