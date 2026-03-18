@@ -107,17 +107,22 @@ export default function Home() {
           <Link
             href="/"
             className={cn(
-              "hidden w-fit rounded-lg border border-neutral-700 px-4 py-4 lg:flex lg:items-center lg:gap-x-0.5",
+              "group hidden w-fit min-w-50 rounded-lg border border-neutral-700 px-4 py-4 lg:flex lg:items-center lg:gap-x-0.5",
             )}
           >
             <span
               className={cn(
-                "text-sm font-medium tracking-wider text-neutral-700",
+                "relative shrink-0 text-sm font-normal tracking-wider text-neutral-700",
               )}
             >
-              お客様の声一覧を見る
+              <span className="absolute -top-2.5 left-0 w-40 origin-top rotate-x-0 transition-transform duration-300 group-hover:rotate-x-90">
+                お客様の声一覧を見る
+              </span>
+              <span className="absolute -top-2.5 left-0 w-40 origin-bottom -rotate-x-90 transition-transform duration-300 group-hover:rotate-x-0 group-hover:delay-0">
+                お客様の声一覧を見る
+              </span>
             </span>
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className={cn("ml-auto h-4 w-4 text-neutral-700")} />
           </Link>
         </div>
         <div className={cn("flex flex-col gap-10 lg:hidden")}>
