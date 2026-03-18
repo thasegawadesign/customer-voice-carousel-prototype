@@ -12,7 +12,7 @@ import {
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 const TWEEN_FACTOR_BASE = 0.52;
 
@@ -20,7 +20,7 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
 type PropType = {
-  slides: number[];
+  slides: React.ReactNode[];
   options?: EmblaOptionsType;
 };
 
@@ -101,15 +101,15 @@ const EmblaCarousel = (props: PropType) => {
       .on("reInit", tweenScale)
       .on("scroll", tweenScale)
       .on("slideFocus", tweenScale);
-  }, [emblaApi, tweenScale]);
+  }, [emblaApi, setTweenFactor, setTweenNodes, tweenScale]);
 
   return (
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
+          {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
+              <div className="embla__slide__number">{slide}</div>
             </div>
           ))}
         </div>
