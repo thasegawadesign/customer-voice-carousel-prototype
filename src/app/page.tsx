@@ -80,7 +80,7 @@ export default function Home() {
         >
           <h1
             className={cn(
-              "font-regular relative pl-2 text-sm leading-4 tracking-wide text-neutral-700 sm:text-base md:text-lg lg:pl-0 xl:absolute xl:top-2 xl:-left-40 2xl:-left-64",
+              "font-regular 3xl:-left-80 3xl:text-[22px] relative pl-2 text-sm leading-4 tracking-wide text-neutral-700 sm:text-base md:text-lg lg:pl-0 xl:absolute xl:top-2 xl:-left-40 2xl:-left-64 2xl:text-xl",
               "before:absolute before:top-0 before:left-0 before:h-full before:w-px before:bg-neutral-700 before:content-[''] lg:before:hidden",
             )}
           >
