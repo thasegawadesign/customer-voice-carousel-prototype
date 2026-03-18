@@ -1,6 +1,7 @@
 import EmblaCarousel from "@/components/EmblaCarousel/EmblaCarousel";
 import { cn } from "@/lib/utils";
 import { EmblaOptionsType } from "embla-carousel";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,32 +68,59 @@ export default function Home() {
   };
   return (
     <>
-      <main className={cn("bg-neutral-100 px-4 py-20 xl:pr-20 2xl:pr-48")}>
-        <div className={cn("mb-10 space-y-5")}>
+      <main
+        className={cn(
+          "min-h-screen bg-neutral-100 px-4 py-20 xl:pr-20 2xl:pr-48",
+        )}
+      >
+        <div
+          className={cn(
+            "relative mr-0 mb-10 ml-auto max-w-5xl space-y-5 lg:-mb-10 lg:space-y-10",
+          )}
+        >
           <h1
             className={cn(
-              "font-regular relative pl-2 text-sm leading-4 tracking-wide text-neutral-700 underline",
-              "before:absolute before:top-0 before:left-0 before:h-full before:w-px before:bg-neutral-700 before:content-['']",
+              "font-regular relative pl-2 text-sm leading-4 tracking-wide text-neutral-700 sm:text-base md:text-lg lg:pl-0 xl:absolute xl:top-2 xl:-left-40 2xl:-left-64",
+              "before:absolute before:top-0 before:left-0 before:h-full before:w-px before:bg-neutral-700 before:content-[''] lg:before:hidden",
             )}
           >
-            お客様の声
+            <Link href="/" className="underline hover:no-underline">
+              お客様の声
+            </Link>
           </h1>
           <p
             className={cn(
-              "text-2xl font-normal tracking-wider text-neutral-700",
+              "text-2xl font-normal tracking-wider text-neutral-700 sm:text-3xl md:text-4xl",
             )}
           >
             様々な業種の成功事例
           </p>
           <p
-            className={cn("text-xs font-normal tracking-wide text-neutral-700")}
+            className={cn(
+              "text-xs font-normal tracking-wide text-neutral-700 sm:text-sm md:text-base",
+            )}
           >
             ここでは、私たちのアプローチがどのように
             <br />
             お客様のビジネスに貢献したかを、実際の声とともにご紹介します。
           </p>
+          <Link
+            href="/"
+            className={cn(
+              "hidden w-fit rounded-lg border border-neutral-700 px-4 py-4 lg:flex lg:items-center lg:gap-x-0.5",
+            )}
+          >
+            <span
+              className={cn(
+                "text-sm font-medium tracking-wider text-neutral-700",
+              )}
+            >
+              お客様の声一覧を見る
+            </span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
-        <div className={cn("flex flex-col gap-10 md:hidden")}>
+        <div className={cn("flex flex-col gap-10 lg:hidden")}>
           {customerVoices.map((voice, i) => (
             <Link key={i} href="/" className="flex flex-col gap-2">
               <div className={cn("overflow-hidden rounded-lg")}>
@@ -105,13 +133,17 @@ export default function Home() {
                 />
               </div>
 
-              <p className={cn("text-xs font-normal text-neutral-500")}>
+              <p
+                className={cn(
+                  "text-xs font-normal text-neutral-500 sm:text-sm md:text-base",
+                )}
+              >
                 {voice.company}
               </p>
 
               <h2
                 className={cn(
-                  "text-base leading-5 font-medium text-neutral-700 underline",
+                  "text-base leading-5 font-medium text-neutral-700 underline sm:text-lg sm:leading-7 md:text-xl md:leading-8",
                 )}
               >
                 {voice.title}
@@ -119,7 +151,7 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        <div className={cn("hidden md:block")}>
+        <div className={cn("hidden lg:block")}>
           <EmblaCarousel
             slides={customerVoices.map((voice, i) => (
               <Link
