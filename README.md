@@ -4,6 +4,8 @@
 
 Next.js · Tailwind CSS v4 · TypeScript で構築しています。
 
+カルーセルの実装には [Embla Carousel](https://www.embla-carousel.com/) を使用しています。
+
 ## デモ
 
 ![デモ画面](./public/demo.png)
