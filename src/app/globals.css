@@ -1,1 +1,5 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-noto-sans-jp), sans-serif;
+}

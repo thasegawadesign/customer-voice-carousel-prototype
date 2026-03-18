@@ -1,10 +1,17 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
+import "./globals.css";
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-noto-sans-jp",
+});
 
 export const metadata: Metadata = {
-  title: 'Customer Voice Carousel',
+  title: "Customer Voice Carousel",
   description:
-    'A responsive testimonial carousel prototype designed for Japanese corporate websites. Built with Next.js, Tailwind CSS v4, and TypeScript.',
+    "A responsive testimonial carousel prototype designed for Japanese corporate websites. Built with Next.js, Tailwind CSS v4, and TypeScript.",
 };
 
 export default function RootLayout({
@@ -13,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={notoSansJP.variable}>
       <body>{children}</body>
     </html>
   );
