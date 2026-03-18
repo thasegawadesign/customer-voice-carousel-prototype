@@ -1,4 +1,5 @@
 import "@/components/EmblaCarousel/embla.css";
+import { cn } from "@/lib/utils";
 import { EmblaCarouselType } from "embla-carousel";
 import { ComponentPropsWithRef, useCallback, useEffect, useState } from "react";
 
@@ -52,8 +53,9 @@ export const PrevButton = (props: PropType) => {
 
   return (
     <button
-      className={"embla__button embla__button--prev".concat(
-        disabled ? "embla__button--disabled" : "",
+      className={cn(
+        "embla__button embla__button--prev",
+        disabled && "embla__button--disabled",
       )}
       type="button"
       {...restProps}
@@ -74,8 +76,9 @@ export const NextButton = (props: PropType) => {
 
   return (
     <button
-      className={"embla__button embla__button--prev".concat(
-        disabled ? "embla__button--disabled" : "",
+      className={cn(
+        "embla__button embla__button--next",
+        disabled && "embla__button--disabled",
       )}
       type="button"
       {...restProps}
