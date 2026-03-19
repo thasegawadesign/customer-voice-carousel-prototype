@@ -122,7 +122,11 @@ export default function Home() {
                 お客様の声一覧を見る
               </span>
             </span>
-            <ArrowRight className={cn("ml-auto h-4 w-4 text-neutral-700")} />
+            <ArrowRight
+              className={cn(
+                "ml-auto h-4 w-4 text-neutral-700 group-hover:animate-[shake-x_0.3s_ease-out_forwards]",
+              )}
+            />
           </Link>
         </div>
         <div className={cn("flex flex-col gap-10 lg:hidden")}>
