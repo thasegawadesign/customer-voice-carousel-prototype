@@ -116,10 +116,10 @@ export default function Home() {
                   "relative shrink-0 text-sm font-normal tracking-wider text-neutral-700 2xl:text-base",
                 )}
               >
-                <span className="absolute -top-2.5 left-0 w-44 origin-top rotate-x-0 transition-transform duration-300 group-hover:rotate-x-90 2xl:-top-3">
+                <span className="absolute -top-2.5 left-0 w-44 origin-top rotate-x-0 transition-transform duration-300 select-none group-hover:rotate-x-90 2xl:-top-3">
                   お客様の声一覧を見る
                 </span>
-                <span className="absolute -top-2.5 left-0 w-44 origin-bottom -rotate-x-90 transition-transform duration-300 group-hover:rotate-x-0 group-hover:delay-0 2xl:-top-3">
+                <span className="absolute -top-2.5 left-0 w-44 origin-bottom -rotate-x-90 transition-transform duration-300 select-none group-hover:rotate-x-0 group-hover:delay-0 2xl:-top-3">
                   お客様の声一覧を見る
                 </span>
               </span>
